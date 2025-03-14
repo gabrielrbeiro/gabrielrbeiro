@@ -1,16 +1,9 @@
 ---
 import { Picture } from 'astro:assets';
-import type { SupportedLanguage } from '../settings'
 import poster from '../../public/images/poster-1440.webp'
-
-export type Props = {
-  language: SupportedLanguage
-}
-
-const { language } = Astro.props
 ---
 
-<a href="/" class="relative overflow-hidden group w-full block ring-0 outline-0 rounded-lg shadow-md aspect-video">
+<a href="/" class="relative overflow-hidden group w-full block ring-0 outline-0 rounded-lg shadow-md dark:shadow-slate-800 aspect-video">
   <span class="absolute z-30 bg-red-100 border-[2px] border-red-500 text-red-500 top-4 left-4 px-3 h-6 flex items-center font-medium text-sm rounded-full">
     Latest post
   </span>

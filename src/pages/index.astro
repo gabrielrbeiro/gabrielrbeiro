@@ -4,7 +4,6 @@ import LatestPost from '../components/LatestPost.astro';
 import PostGrid from '../components/PostGrid.astro';
 import FeaturedPost from '../components/FeaturedPost.astro';
 import Footer from '../components/Footer.astro';
-import SimplePostItem from '../components/SimplePostItem.astro';
 import { DefaultSettings } from '../settings';
 
 import '../styles/global.css';
@@ -20,8 +19,18 @@ import '../styles/global.css';
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script>
+      (() => {
+        const darkMode = localStorage.getItem('dark-mode');
+        if (darkMode === 'true') {
+          document.documentElement.classList.add('dark');
+        }
+      })();
+    </script>
+
   </head>
-  <body class="font-screen">
+  <body class="font-screen dark:bg-slate-900 transition-colors duration-200 ease-in-out">
     <Header language="en" />
     <main class="container mx-auto px-4 py-2">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">

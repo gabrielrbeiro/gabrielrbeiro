@@ -11,3 +11,4 @@
   --font-body: var(--font-screen);
 }
 
+@custom-variant dark (&:where(.dark, .dark *));

@@ -1,0 +1,29 @@
+---
+import { Picture } from 'astro:assets';
+import poster from '../../public/images/poster-1440.webp'
+---
+
+<a href="/" class="relative overflow-hidden group w-full block ring-0 outline-0 rounded-lg shadow-md dark:shadow-slate-800 aspect-video">
+  <span class="absolute z-30 bg-red-100 border-[2px] border-red-500 text-red-500 top-4 left-4 px-3 h-6 flex items-center font-medium text-sm rounded-full">
+    Latest post
+  </span>
+
+  <div class="absolute top-0 left-0 right-0 bottom-0
+              group-hover:blur-sm 
+              transition-colors ease-in-out duration-150">
+    <Picture alt="A blog post cover" 
+             src={poster} 
+             widths={[1440, 720, 360, poster.width]}
+             formats={['avif', 'webp']}
+             class="group-hover:scale-125 pointer-events-none group-focus-within:scale-125 group-focus-within:blur-xs transition-transform ease-in-out duration-300"/>
+  </div>
+
+  <h2 class="absolute bottom-9 left-4 right-4 line-clamp-2 text-2xl font-title font-black text-white pb-2 z-20 underline-offset-4
+             md:text-4xl md:left-6 md:right-6 md:bottom-14
+             group-hover:text-red-500 group-focus-within:text-red-500 group-focus-within:underline group-hover:underline
+             transition-colors ease-in-out duration-150">
+    Lorem ipsum dot sit amet consectetur, adipisicing elit. And some more text. Another long sentence.
+  </h2>
+
+  <span class="absolute z-30 bottom-4 left-4 md:bottom-6 md:left-7 text-white">January 17, 2025</span>
+</a>

@@ -6,7 +6,9 @@ category: 'software-development'
 tags: ['frontend', 'web', 'astro']
 heroImage: 'building-blog-with-astro.jpg'
 heroImageAlt: 'A closed store with a sign that reads "what is your story?"'
+thumbnail: 'building-blog-with-astro-thumbnail.jpg'
 locale: 'en'
+featured: true
 translations: 
   - locale: 'pt-br'
     location: 'construindo-um-blog-com-astro'

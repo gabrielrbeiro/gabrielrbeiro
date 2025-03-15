@@ -1,0 +1,6 @@
+- id: software-development
+  translations:
+    - locale: en
+      text: Software Development
+    - locale: pt-br
+      text: Desenvolvimento de Software

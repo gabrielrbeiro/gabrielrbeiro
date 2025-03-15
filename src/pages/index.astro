@@ -1,4 +1,6 @@
 ---
+import { getCollection } from 'astro:content';
+
 import Header from '../components/Header.astro';
 import LatestPost from '../components/LatestPost.astro';
 import PostGrid from '../components/PostGrid.astro';
@@ -7,6 +9,10 @@ import Footer from '../components/Footer.astro';
 import { DefaultSettings } from '../settings';
 
 import '../styles/global.css';
+
+const collection = await getCollection('posts');
+const posts = collection.filter((post) => post.data.locale === 'en')
+  .sort((a, b) => new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime());
 ---
 
 <!doctype html>
@@ -34,7 +40,7 @@ import '../styles/global.css';
     <Header language="en" />
     <main class="container mt-16 mx-auto px-4 py-2">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <LatestPost language="en"/>
+        <LatestPost post={posts.shift()} />
         <div class="flex flex-col items justify-between mt-4 md:mt-0">
           <FeaturedPost language="en" />
           <FeaturedPost language="en" />

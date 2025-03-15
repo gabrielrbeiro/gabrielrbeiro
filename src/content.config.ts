@@ -1,16 +1,22 @@
 import { glob } from 'astro/loaders';
 import { defineCollection, z } from 'astro:content';
-import { SUPPORTED_LANGUAGES } from './settings';
 
-export const collections = Object.fromEntries(SUPPORTED_LANGUAGES.map(language => [language, defineCollection({
-    loader: glob({ base: `./src/content/blog/${language}`, pattern: '**/*.{md,mdx}' }),
-    schema: z.object({
-      title: z.string(),
-      description: z.string(),
-      pubDate: z.coerce.date(),
-      updatedDate: z.coerce.date().optional(),
-      heroImage: z.string().optional(),
-      translations: z.map(z.string(), z.string()).optional()
-    })
-})]));
+export const posts = defineCollection({
+  loader: glob({ base: './src/content/posts', pattern: '**/*.{md,mdx}' }),
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+    pubDate: z.coerce.date(),
+    category: z.string(),
+    tags: z.array(z.string()),
+    heroImage: z.string(),
+    heroImageAlt: z.string(),
+    locale: z.string(),
+    translations: z.array(z.object({
+      locale: z.string(),
+      location: z.string(),
+    }))
+  })
+});
 
+export const collections = { posts }

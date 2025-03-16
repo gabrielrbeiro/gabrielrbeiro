@@ -12,13 +12,13 @@
     "@astrojs/mdx": "^4.1.1",
     "@astrojs/rss": "^4.0.11",
     "@astrojs/sitemap": "^3.2.1",
-    "@fontsource/cardo": "^5.2.5",
+    "@fontsource/libre-baskerville": "^5.2.5",
     "@fontsource/open-sans": "^5.2.5",
-    "@fontsource/outfit": "^5.2.5",
     "@fontsource/palanquin-dark": "^5.2.5",
     "@tailwindcss/vite": "^4.0.13",
     "astro": "^5.4.3",
     "sharp": "^0.33.5",
-    "tailwindcss": "^4.0.13"
+    "tailwindcss": "^4.0.13",
+    "yaml": "^2.7.0"
   }
 }

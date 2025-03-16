@@ -8,7 +8,7 @@ export type GlobalSettings = {
   description: string;
 };
 
-export const DefaultSettings: Record<SupportedLanguage, GlobalSettings> = {
+export const DefaultSettings: Record<string, GlobalSettings> = {
   'en': {
     title: 'gr/blog',
     description: 'Just a developer sharing thoughts on programming, tech trends, and career insights. No fluff, just real opinions and useful content.',

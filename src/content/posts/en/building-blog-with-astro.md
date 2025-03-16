@@ -1,8 +1,17 @@
 ---
-title: 'Eu e casca de bala'
-description: 'Lorem ipsum dolor sit amet'
-pubDate: 'Jul 08 2022'
-heroImage: '/blog-placeholder-3.jpg'
+title: 'Building a personal blog with Astro'
+description: 'An article detailing my experience designing a personal blog with Astro.'
+pubDate: 'Mar 15 2025'
+category: 'software-development'
+tags: ['frontend', 'web', 'astro']
+heroImage: 'building-blog-with-astro.jpg'
+heroImageAlt: 'A closed store with a sign that reads "what is your story?"'
+thumbnail: 'building-blog-with-astro-thumbnail.jpg'
+locale: 'en'
+featured: true
+translations: 
+  - locale: 'pt-br'
+    location: 'construindo-blog-pessoal-com-astro'
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vitae ultricies leo integer malesuada nunc vel risus commodo viverra. Adipiscing enim eu turpis egestas pretium. Euismod elementum nisi quis eleifend quam adipiscing. In hac habitasse platea dictumst vestibulum. Sagittis purus sit amet volutpat. Netus et malesuada fames ac turpis egestas. Eget magna fermentum iaculis eu non diam phasellus vestibulum lorem. Varius sit amet mattis vulputate enim. Habitasse platea dictumst quisque sagittis. Integer quis auctor elit sed vulputate mi. Dictumst quisque sagittis purus sit amet.

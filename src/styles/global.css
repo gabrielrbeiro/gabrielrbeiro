@@ -1,12 +1,11 @@
 @import "tailwindcss";
-@import "@fontsource/outfit";
-@import "@fontsource/cardo";
 @import "@fontsource/open-sans";
 @import "@fontsource/palanquin-dark";
+@import "@fontsource/libre-baskerville";
 
 @theme {
   --font-screen: 'Open Sans', sans-serif;
-  --font-article: 'Cardo', serif;
+  --font-article: 'Libre Baskerville', serif;
   --font-title: 'Palanquin Dark', sans-serif;
   --font-body: var(--font-screen);
 }

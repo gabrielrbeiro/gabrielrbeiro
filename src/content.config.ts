@@ -1,16 +1,38 @@
-import { glob } from 'astro/loaders';
+import { glob, file } from 'astro/loaders';
 import { defineCollection, z } from 'astro:content';
-import { SUPPORTED_LANGUAGES } from './settings';
+import { parse as parseYaml } from 'yaml';
 
-export const collections = Object.fromEntries(SUPPORTED_LANGUAGES.map(language => [language, defineCollection({
-    loader: glob({ base: `./src/content/blog/${language}`, pattern: '**/*.{md,mdx}' }),
-    schema: z.object({
-      title: z.string(),
-      description: z.string(),
-      pubDate: z.coerce.date(),
-      updatedDate: z.coerce.date().optional(),
-      heroImage: z.string().optional(),
-      translations: z.map(z.string(), z.string()).optional()
-    })
-})]));
+export const posts = defineCollection({
+  loader: glob({ base: './src/content/posts', pattern: '**/*.{md,mdx}' }),
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+    pubDate: z.coerce.date(),
+    category: z.string(),
+    tags: z.array(z.string()),
+    heroImage: z.string(),
+    heroImageAlt: z.string(),
+    thumbnail: z.string(),
+    locale: z.string(),
+    featured: z.boolean(),
+    translations: z.array(z.object({
+      locale: z.string(),
+      location: z.string(),
+    }))
+  })
+});
 
+export const categories = defineCollection({
+  loader: file("./src/content/categories.yaml", { parser: (content) => parseYaml(content) }),
+  schema: z.object({
+    id: z.string(),
+    translations: z.array(z.object({
+      locale: z.string(),
+      text: z.string(),
+      slug: z.string(),
+    }))
+  })
+});
+
+
+export const collections = { posts, categories }

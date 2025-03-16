@@ -1,0 +1,42 @@
+---
+import Header from './Header.astro'
+import Footer from './Footer.astro'
+
+import '../styles/global.css'
+
+export type Props = {
+  title: string
+  description: string
+}
+
+const { title, description } = Astro.props
+const { lang } = Astro.params
+const htmlLang = (lang == 'en') ? 'en-US' : 'pt-BR'
+---
+
+<!doctype html>
+<html lang={htmlLang}>
+  <head>
+    <meta charset="utf-8" />
+
+    <title>{ title }</title>
+    <meta name="description" content={ description } />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script>
+      (() => {
+        const darkMode = localStorage.getItem('dark-mode');
+        if (darkMode === 'true') {
+          document.documentElement.classList.add('dark');
+        }
+      })();
+    </script>
+  </head>
+  <body class="font-scren dark:bg-slate-900">
+    <Header />
+    <slot />
+    <Footer />
+  </body>
+</html>

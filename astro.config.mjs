@@ -14,7 +14,7 @@ export default defineConfig({
     locales: [ 'en', 'pt-br' ],
     defaultLocale: 'en',
     routing: {
-      prefixDefaultLocale: false
+      prefixDefaultLocale: true
     }
   },
 

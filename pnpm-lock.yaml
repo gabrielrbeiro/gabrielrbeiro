@@ -17,25 +17,13 @@ importers:
       '@astrojs/sitemap':
         specifier: ^3.2.1
         version: 3.2.1
-      '@fontsource/cardo':
-        specifier: ^5.2.5
-        version: 5.2.5
       '@fontsource/libre-baskerville':
-        specifier: ^5.2.5
-        version: 5.2.5
-      '@fontsource/noto-serif':
         specifier: ^5.2.5
         version: 5.2.5
       '@fontsource/open-sans':
         specifier: ^5.2.5
         version: 5.2.5
-      '@fontsource/outfit':
-        specifier: ^5.2.5
-        version: 5.2.5
       '@fontsource/palanquin-dark':
-        specifier: ^5.2.5
-        version: 5.2.5
-      '@fontsource/scope-one':
         specifier: ^5.2.5
         version: 5.2.5
       '@tailwindcss/vite':
@@ -255,26 +243,14 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@fontsource/cardo@5.2.5':
-    resolution: {integrity: sha512-ByWxV3g3HeCGeHkAXdmJWrCaa5khJKpMZowJNiq+2Qv5BWAj4WYQ6+6lCFHRO/uk7cGR2QwanB5XPPLNOiapog==}
-
   '@fontsource/libre-baskerville@5.2.5':
     resolution: {integrity: sha512-Gi/TTnkg1Ui6/AoilZ07pCDJbloB10GKljyegqiKzlolaaFuXIfLfl0ROHfzWYG1Kjxid7femmxOXCNaCEo5tw==}
-
-  '@fontsource/noto-serif@5.2.5':
-    resolution: {integrity: sha512-XX3/nL+kDv/+JP35Vsq0sWQfqJVYtlAUTLiBnmn71zPO2J4gEzY1PG3p0x3CebNepqZjAhboidnb85ATilJWCA==}
 
   '@fontsource/open-sans@5.2.5':
     resolution: {integrity: sha512-f0Ww6H+LB6GXA8UCgqs90h4djVttu3quH/1+wkfUY8b09mG1ESn4ACRBHYY78bsoeDXpaCyZh7eoGROBWplvAQ==}
 
-  '@fontsource/outfit@5.2.5':
-    resolution: {integrity: sha512-MoQRZDQ8nKOYxJXJNXzcDaBfw+k6IQ0+O/fQaBh5zJRb1/n7JNqxnc7iLK46YlMaFEGh8rjjF0Pp6o8Qc8JSJw==}
-
   '@fontsource/palanquin-dark@5.2.5':
     resolution: {integrity: sha512-WLgt/1wvY9cJntONrYth5dWNgFWhH1buTq5VfIzejLj5q0+qUJq+TqmYLM4W0q0j6YnJfwe3DvnkZLwyG05zAg==}
-
-  '@fontsource/scope-one@5.2.5':
-    resolution: {integrity: sha512-KzsY9yyRBiSbPbBJm1sqnYA39s7xMGOJdOJ5YyiPD66zZt/f4Ae+r4a58W5zNVqPHtRnMNrSEmMdG/zHjyjMIg==}
 
   '@img/sharp-darwin-arm64@0.33.5':
     resolution: {integrity: sha512-UT4p+iz/2H4twwAoLCqfA9UH5pI6DggwKEGuaPy7nCVQ8ZsiY5PIcrRvD1DzuY3qYL07NtIQcWnBSY/heikIFQ==}
@@ -1938,19 +1914,11 @@ snapshots:
   '@esbuild/win32-x64@0.25.1':
     optional: true
 
-  '@fontsource/cardo@5.2.5': {}
-
   '@fontsource/libre-baskerville@5.2.5': {}
-
-  '@fontsource/noto-serif@5.2.5': {}
 
   '@fontsource/open-sans@5.2.5': {}
 
-  '@fontsource/outfit@5.2.5': {}
-
   '@fontsource/palanquin-dark@5.2.5': {}
-
-  '@fontsource/scope-one@5.2.5': {}
 
   '@img/sharp-darwin-arm64@0.33.5':
     optionalDependencies:

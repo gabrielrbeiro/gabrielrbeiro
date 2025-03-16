@@ -1,10 +1,6 @@
 @import "tailwindcss";
-@import "@fontsource/outfit";
-@import "@fontsource/cardo";
 @import "@fontsource/open-sans";
 @import "@fontsource/palanquin-dark";
-@import "@fontsource/noto-serif";
-@import "@fontsource/scope-one";
 @import "@fontsource/libre-baskerville";
 
 @theme {

@@ -3,15 +3,18 @@ import type { CollectionEntry } from 'astro:content';
 import { Picture } from 'astro:assets';
 import imageResolver from '../util/image-resolver';
 import dateFormatter from '../util/date-formatter';
+import { getAbsoluteLocaleUrl } from 'astro:i18n';
 
 export type Props = {
   post: CollectionEntry<'posts'>
 }
 
 const { post } = Astro.props
+const [ locale, id ] = post.id.split('/');
+const postUrl = getAbsoluteLocaleUrl(locale, id);
 ---
 
-<a href={post.id} class="relative overflow-hidden group w-full block ring-0 outline-0 rounded-lg shadow-md dark:shadow-slate-800 aspect-video">
+<a href={postUrl} class="relative overflow-hidden group w-full block ring-0 outline-0 rounded-lg shadow-md dark:shadow-slate-800 aspect-video">
   <div class="absolute top-0 left-0 right-0 bottom-0 
               group-hover:blur-sm">
     <Picture alt={post.data.heroImageAlt}

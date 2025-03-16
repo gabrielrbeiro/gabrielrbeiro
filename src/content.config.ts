@@ -29,6 +29,7 @@ export const categories = defineCollection({
     translations: z.array(z.object({
       locale: z.string(),
       text: z.string(),
+      slug: z.string(),
     }))
   })
 });

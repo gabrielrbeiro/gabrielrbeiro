@@ -2,5 +2,7 @@
   translations:
     - locale: en
       text: Software Development
+      slug: software-development
     - locale: pt-br
       text: Desenvolvimento de Software
+      slug: desenvolvimento-software

@@ -1,0 +1,26 @@
+---
+import { getEntry } from "astro:content";
+
+const { lang, post } = Astro.params;
+
+const content = await getEntry("posts", `${lang}/${post}`);
+if (!content) {
+  throw new Error(`Post not found for ${lang}/${post}`);
+}
+
+const locales = {
+  'pt-br': 'Português',
+  'en': 'English',
+}
+
+---
+
+<div class="bg-slate-50 border-[1px] border-slate-300 p-4 mt-8 rounded-md shadow-sm">
+  <p class="font-medium !mb-2">This article is also available in other languages:</p>
+
+  {
+    content.data.translations.map((locale) => (
+      <a href={`/${locale.locale}/${locale.location}`} class="underline">{locales[locale.locale]}</a>
+    ))
+  }
+</div>

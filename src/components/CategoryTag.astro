@@ -6,7 +6,7 @@ export type Props = {
 }
 
 const { name, slug, lang } = Astro.props;
-const tagUrl = `/${lang}/tags/${slug}/`;
+const tagUrl = `/${lang}/category/${slug}/`;
 ---
 
 <a href={tagUrl} tabindex="-1"

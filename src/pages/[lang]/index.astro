@@ -1,0 +1,38 @@
+---
+import { getCollection } from 'astro:content';
+
+import Layout from '../../components/Layout.astro';
+import LatestPost from '../../components/LatestPost.astro';
+import FeaturedPost from '../../components/FeaturedPost.astro';
+import { DefaultSettings } from '../../settings';
+
+import '../../styles/global.css';
+
+const { lang } = Astro.params;
+
+export async function getStaticPaths() {
+  return [
+    { params: { lang: 'en' } },
+    { params: { lang: 'pt-br' } },
+  ]
+}
+
+const collection = await getCollection('posts');
+const posts = collection.filter((post) => post.data.locale === lang)
+  .sort((a, b) => new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime());
+---
+
+<Layout title={DefaultSettings[lang].title} description={DefaultSettings[lang].description}>
+  <main class="container mx-auto px-4 py-2">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <LatestPost post={posts[0]} />
+      <div class="flex flex-col items justify-between mt-4 md:mt-0">
+        {
+          posts.filter(post => post.data.featured).slice(0, 3)
+          .map((post) => <FeaturedPost post={post} />)
+        }
+      </div>
+    </div>
+  </main>
+</Layout>
+

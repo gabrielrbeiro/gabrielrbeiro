@@ -1,0 +1,56 @@
+---
+import { getCollection, getEntry } from 'astro:content';
+import Layout from '../../components/Layout.astro';
+import { render } from 'astro:content';
+import dateFormatter from '../../util/date-formatter';
+import TranslationSwitch from '../../components/TranslationSwitch.astro';
+
+export async function getStaticPaths() {
+  const collection = await getCollection('posts');
+
+  return collection.map((post) => ({
+    params: {
+      post: post.id.split('/')[1],
+      lang: post.data.locale
+    }
+  }))
+}
+
+const { lang, post } = Astro.params;
+const content = await getEntry('posts', `${lang}/${post}`);
+if (!content) {
+  return { status: 404 };
+}
+
+const { Content } = await render(content);
+---
+
+<Layout title={content.data.title} description={content.data.description}> 
+  <article class="container mt-8 md:mt-24 mx-auto px-4 py-2 dark:text-slate-50">
+    <div class="md:w-4/6 mx-auto">
+      <h1 class="text-5xl underline font-title font-black mb-4">{content.data.title}</h1>
+      <span class="italic"><a class="underline" href="//github.com/gabrielrbeiro">Gabriel Ribeiro</a> @ {dateFormatter(lang, content.data.pubDate)}</span>
+
+      <TranslationSwitch />
+      <div class="font-article text-xl leading-8 font-medium mt-12">
+        <Content />
+      </div>
+      <div id="disqus_thread"></div>
+    </div>
+  </article>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const script = document.createElement('script');
+      script.src = 'https://gabriel-pub.disqus.com/embed.js';
+      script.setAttribute('data-timestamp', +new Date());
+      (document.head || document.body).appendChild(script);
+    });
+  </script>
+</Layout>
+
+<style global>
+  p {
+    margin-bottom: 1.5rem;
+  }
+</style>
